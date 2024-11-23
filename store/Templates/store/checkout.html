@@ -1,0 +1,61 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="box-element" id="form-wrapper">
+            <div class="user-info">
+                <div class="form-field">
+                    <input required class="form-control" type="text" name="name" placeholder="Name*">        
+                </div>
+                <div class="form-field">
+                    <input required class="form-control" type="email" name="email" placeholder="Email*">
+                </div>
+            </div><hr>
+            <div class="shipping-info">
+                <h5>Shipping Information:</h5><hr>
+                <div class="form-field">
+                    <input class="form-control" type="text" name="address" id="" placeholder="Address.."> 
+                </div>
+                <div class="form-field">
+                    <input class="form-control" type="text" name="city" id="" placeholder="City..">
+                </div>
+                <div class="form-field">
+                    <input class="form-control" type="text" name="state" id="" placeholder="State..">
+                </div>
+                <div class="form-field">
+                    <input class="form-control" type="text" name="zipcode" placeholder="Zipcode..">
+                </div>
+                <br>
+                <div class="box-element hidden" id="payment-info">
+                    <small>Paypal options</small>
+                </div>
+
+
+            </div>
+
+            <input type="submit" value="continue" id="form-button" class="btn btn-success btn-block">
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="box-element">
+            <div>
+                <a class="btn btn-outline-dark" href="{% url 'cart' %}">&larr; back to cart</a>
+            </div><hr>
+           
+            <div><h3>Order Summary</h3></div><hr>
+            
+            <div>
+                <div class="cart-row">
+                    <div style="flex: 2"><img src="{% static 'images/placeholder.png' %}" alt="" class="row-image"></div>
+                    <div style="flex: 2"><p>product 1</p></div>
+                    <div style="flex: 1"><strong>$20</strong></div>
+                    <div style="flex: 1">x2</div>
+            </div>
+            <h5>items:2</h5>
+            <h5>total:$42</h5>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
